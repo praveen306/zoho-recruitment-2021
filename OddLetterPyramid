@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class OddLetterPyramid {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		String letter = sc.nextLine(); //aasuming that input will be always with odd letter count
+		sc.close();
+		int length = letter.length();
+		int mid = length/2;
+		int temp = length;
+		for (int i=mid, l=0; i<length; i++,l++) {
+			for (int j=0; j<temp-1;j++) {
+				System.out.print(" ");
+			}
+			for (int k = mid;k<=mid+l; k++) {
+				System.out.print(letter.charAt(k));
+			}
+			System.out.println("");
+			temp--;
+		}
+		for (int m = 0; m<mid; m++) {
+			for (int n=0; n<temp-1;n++) {
+				System.out.print(" ");
+			}
+			for (int k = mid;k<length; k++) {
+				System.out.print(letter.charAt(k));
+			}
+			for (int n = 0;n<=m;n++) {
+				System.out.print(letter.charAt(n));
+			}
+			System.out.println("");
+			temp--;
+		}
+	}
+}
